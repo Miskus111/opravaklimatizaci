@@ -142,7 +142,10 @@ p  { color: var(--text-mid); line-height: 1.7; }
 
 /* Logo */
 .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; text-decoration: none; }
-.logo-img { height: 42px; width: auto; object-fit: contain; display: block; flex-shrink: 0; }
+.logo-img {
+  height: 40px; width: auto; object-fit: contain; display: block; flex-shrink: 0;
+  background: #fff; border-radius: 7px; padding: 4px 9px;
+}
 .logo-text { display: flex; flex-direction: column; line-height: 1.25; }
 .logo-name { font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.18rem; color: var(--white); letter-spacing: .02em; white-space: nowrap; }
 .logo-tagline { font-size: .64rem; color: rgba(255,255,255,.48); letter-spacing: .05em; white-space: nowrap; }
@@ -233,33 +236,15 @@ p  { color: var(--text-mid); line-height: 1.7; }
 .hero-bg-overlay {
   position: absolute; inset: 0;
   background: linear-gradient(
-    105deg,
-    rgba(6,21,48,.97) 0%,
-    rgba(10,31,68,.93) 40%,
-    rgba(10,31,68,.82) 65%,
-    rgba(10,31,68,.68) 100%
+    to right,
+    rgba(6,21,48,.88) 0%,
+    rgba(10,31,68,.68) 55%,
+    rgba(10,31,68,.38) 100%
   );
   z-index: 1;
 }
 
-.hero-bg-pattern {
-  position: absolute; inset: 0;
-  background-image:
-    radial-gradient(circle at 20% 50%, rgba(30,136,229,.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(255,122,0,.07) 0%, transparent 40%);
-  z-index: 2;
-}
-
-/* Grid lines */
-.hero-bg::before {
-  content: '';
-  position: absolute; inset: 0;
-  background-image:
-    linear-gradient(rgba(30,136,229,.04) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(30,136,229,.04) 1px, transparent 1px);
-  background-size: 60px 60px;
-  z-index: 0;
-}
+.hero-bg-pattern { display: none; }
 
 .hero-content {
   position: relative; z-index: 3;
@@ -624,6 +609,14 @@ a.contact-value:hover { color: var(--orange-light); }
   /* Hero */
   .hero-content { padding-top: 32px; padding-bottom: 60px; }
   .hero-title { font-size: clamp(1.7rem, 7vw, 2.1rem); }
+  .hero-bg-overlay {
+    background: linear-gradient(
+      to bottom,
+      rgba(6,21,48,.55) 0%,
+      rgba(10,31,68,.72) 60%,
+      rgba(10,31,68,.90) 100%
+    );
+  }
   .hero-subtitle { font-size: 1rem; }
   .hero-cta { flex-direction: column; gap: 12px; }
   .hero-cta .btn { width: 100%; font-size: 1.05rem; min-height: 56px; }

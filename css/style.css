@@ -179,8 +179,10 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.22rem); }
 
 .logo { display: flex; align-items: center; gap: 12px; flex-shrink: 0; text-decoration: none; }
 .logo-img {
-  height: 40px; width: auto; object-fit: contain; display: block; flex-shrink: 0;
-  background: #fff; border-radius: 8px; padding: 4px 9px;
+  height: 48px; width: auto; object-fit: contain; display: block; flex-shrink: 0;
+}
+.logo-img--footer {
+  height: 44px; filter: brightness(0) invert(1);
 }
 .logo-mark {
   width: 40px; height: 40px; flex-shrink: 0;
@@ -249,8 +251,7 @@ h3 { font-size: clamp(1.05rem, 2vw, 1.22rem); }
   .burger { display: flex; }
 }
 @media (max-width: 480px) {
-  .logo-tagline { display: none; }
-  .logo-img { height: 34px; }
+  .logo-img { height: 38px; }
 }
 
 /* ═══════════════════════════════════════════════

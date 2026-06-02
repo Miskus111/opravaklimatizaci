@@ -5,6 +5,17 @@
 (function () {
   'use strict';
 
+  /* ─── LOADING SCREEN ─────────────────────────── */
+  const ls = document.getElementById('loadingScreen');
+  if (ls) {
+    const hide = () => ls.classList.add('ls-hidden');
+    if (document.readyState === 'complete') {
+      setTimeout(hide, 1100);
+    } else {
+      window.addEventListener('load', () => setTimeout(hide, 1100));
+    }
+  }
+
   /* ─── STICKY HEADER ──────────────────────────── */
   const header = document.getElementById('siteHeader');
   if (header) {
@@ -63,7 +74,7 @@
   /* ─── FADE IN ON SCROLL ──────────────────────── */
   if ('IntersectionObserver' in window) {
     const fadeEls = document.querySelectorAll(
-      '.service-card, .why-card, .response-step, .problem-item, .solution-steps li, .benefit, .brand-card, .stat-box, .action-card'
+      '.service-card, .why-card, .hiw-step, .city-card, .area-stat-card, .problem-item, .solution-steps li, .benefit, .brand-card, .stat-box, .action-card'
     );
     fadeEls.forEach(el => el.classList.add('fade-in'));
 

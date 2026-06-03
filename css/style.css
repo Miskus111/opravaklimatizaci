@@ -84,7 +84,14 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 }
 
 .ls-logo {
-  height: 56px; width: auto; object-fit: contain;
+  height: 80px; width: auto; object-fit: contain;
+  animation: lsFadeUp .5s cubic-bezier(.4,0,.2,1) both;
+}
+
+.ls-name {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700;
+  font-size: 1.5rem; color: #0F172A; letter-spacing: .04em;
+  animation: lsFadeUp .55s .05s cubic-bezier(.4,0,.2,1) both;
 }
 
 .ls-bar {

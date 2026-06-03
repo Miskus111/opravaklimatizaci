@@ -813,9 +813,14 @@ body.notice-visible .hero { padding-top: calc(var(--header-h) + var(--notice-h))
   .hiw-arrow { transform: rotate(90deg); margin: 0; }
   .hiw-step { max-width: 100%; width: 100%; }
 
-  .services { padding: 72px 0; }
-  .services-grid { grid-template-columns: 1fr; gap: 14px; }
-  .service-card-body { padding: 20px 20px 24px; }
+  .services { padding: 56px 0; }
+  .services-grid { grid-template-columns: 1fr; gap: 0; background: var(--gray-200); border-radius: var(--r-lg); overflow: hidden; }
+  .service-card { border-radius: 0; border-left: none; border-right: none; border-bottom: none; }
+  .service-card:first-child { border-top: none; }
+  .service-card-img-wrap { aspect-ratio: 16/7; }
+  .service-card-body { padding: 16px 18px 20px; }
+  .service-card-icon { margin-bottom: 10px; }
+  .service-card-icon svg { width: 36px; height: 36px; }
 
   .why-us { padding: 72px 0; }
   .why-grid { grid-template-columns: 1fr 1fr; }

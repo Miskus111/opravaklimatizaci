@@ -86,6 +86,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .ls-logo {
   height: 80px; width: auto; object-fit: contain;
+  filter: brightness(0);
   animation: lsFadeUp .5s cubic-bezier(.4,0,.2,1) both;
 }
 
@@ -232,9 +233,6 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   .main-nav { display: none; }
   .header-cta { display: none; }
   .burger { display: flex; }
-}
-@media (max-width: 480px) {
-  .logo-img { height: 40px; }
 }
 
 /* ═══════════════════════════════════════════════
@@ -864,6 +862,7 @@ body.notice-visible .hero { padding-top: calc(var(--header-h) + var(--notice-h))
     font-weight: 700; font-size: .97rem; color: #fff;
     text-decoration: none; transition: all var(--t-md);
   }
+  .mob-fab-btn svg { width: 22px; height: 22px; flex-shrink: 0; fill: #fff; }
   .mob-fab-phone {
     background: linear-gradient(135deg, var(--blue) 0%, var(--blue-dk) 100%);
     box-shadow: var(--shadow-blue);

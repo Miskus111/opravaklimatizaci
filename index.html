@@ -35,7 +35,7 @@
     "email": "servis.kostler@seznam.cz",
     "address": {
       "@type": "PostalAddress",
-      "streetAddress": "Žírovice 179",
+      "streetAddress": "Žírovice 179/179",
       "addressLocality": "Františkovy Lázně",
       "postalCode": "351 01",
       "addressCountry": "CZ"
@@ -134,6 +134,16 @@
 
   <main>
 
+    <!-- OZNAMOVACÍ BANNER – zobrazuje se automaticky, pokud je NOTICE.enabled = true v js/main.js -->
+    <div id="noticeBanner" class="notice-banner" hidden>
+      <div class="container">
+        <div class="notice-banner-inner">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 22c1.1 0 2-.9 2-2h-4c0 1.1.9 2 2 2zm6-6V11c0-3.07-1.64-5.64-4.5-6.32V4c0-.83-.67-1.5-1.5-1.5s-1.5.67-1.5 1.5v.68C7.63 5.36 6 7.92 6 11v5l-2 2v1h16v-1l-2-2z" fill="currentColor"/></svg>
+          <span class="notice-banner-text"></span>
+        </div>
+      </div>
+    </div>
+
     <!-- ═══════════════════════════════════════════════
          HERO
     ═══════════════════════════════════════════════ -->
@@ -176,6 +186,7 @@
             </div>
           </div>
           <div class="hero-visual" aria-hidden="true">
+            <!-- HLAVNÍ FOTO: pro výměnu změňte src níže (doporučená velikost: 600×450 px) -->
             <img src="images/hero.jpg" alt="Servis klimatizace a tepelného čerpadla" class="hero-img" width="600" height="450" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="hero-img-placeholder" style="display:none">
               <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#93C5FD" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="#BFDBFE"/></svg>
@@ -354,6 +365,95 @@
             <p>Každý případ řešíme individuálně, bez šablonových postupů.</p>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════════════════════
+         FOTOGALERIE PRACÍ
+         Jak vyměnit fotky: uložte vlastní foto do složky images/
+         a změňte src v příslušné <img> níže.
+    ═══════════════════════════════════════════════ -->
+    <section class="photo-gallery" id="galerie" aria-labelledby="gallery-heading">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-label">Naše práce</div>
+          <h2 id="gallery-heading">Ukázky z terénu</h2>
+          <p>Reálné fotografie z výjezdů a servisních prací v Karlovarském kraji.</p>
+        </div>
+        <div class="gallery-grid">
+
+          <div class="gallery-card">
+            <!-- FOTO 1: Nahraďte src vlastní fotografií klimatizace (doporučená velikost: 480×360 px) -->
+            <div class="gallery-img-wrap">
+              <img src="images/photo-klimatizace.jpg" alt="Servis klimatizace" class="gallery-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="gallery-placeholder" aria-hidden="true">
+                <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                  <rect x="8" y="18" width="48" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="17" cy="28" r="3.5" fill="currentColor" opacity=".4"/>
+                  <path d="M25 25h26M25 29h18M25 33h22" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                  <path d="M18 38v10M27 38v10M36 38v10M45 38v10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>Klimatizace</span>
+              </div>
+            </div>
+            <div class="gallery-caption">Servis klimatizací</div>
+          </div>
+
+          <div class="gallery-card">
+            <!-- FOTO 2: Nahraďte src vlastní fotografií tepelného čerpadla (doporučená velikost: 480×360 px) -->
+            <div class="gallery-img-wrap">
+              <img src="images/photo-tepelne-cerpadlo.jpg" alt="Servis tepelného čerpadla" class="gallery-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="gallery-placeholder" aria-hidden="true">
+                <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                  <rect x="10" y="10" width="44" height="44" rx="7" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="32" cy="32" r="13" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="32" cy="32" r="5" fill="currentColor" opacity=".35"/>
+                  <path d="M32 10v8M32 46v8M10 32h8M46 32h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+                <span>Tepelné čerpadlo</span>
+              </div>
+            </div>
+            <div class="gallery-caption">Servis tepelných čerpadel</div>
+          </div>
+
+          <div class="gallery-card">
+            <!-- FOTO 3: Nahraďte src vlastní fotografií technika při práci (doporučená velikost: 480×360 px) -->
+            <div class="gallery-img-wrap">
+              <img src="images/photo-technik.jpg" alt="Technik při práci" class="gallery-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="gallery-placeholder" aria-hidden="true">
+                <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                  <circle cx="32" cy="18" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <path d="M14 54v-7a18 18 0 0136 0v7" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                  <path d="M44 36l10-10M46 28l6 6-10 10-6-6z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+                </svg>
+                <span>Technik při práci</span>
+              </div>
+            </div>
+            <div class="gallery-caption">Odborný technik na místě</div>
+          </div>
+
+          <div class="gallery-card">
+            <!-- FOTO 4: Nahraďte src vlastní fotografií chladicí techniky (doporučená velikost: 480×360 px) -->
+            <div class="gallery-img-wrap">
+              <img src="images/photo-chlazeni.jpg" alt="Chladicí technika" class="gallery-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <div class="gallery-placeholder" aria-hidden="true">
+                <svg width="56" height="56" viewBox="0 0 64 64" fill="none">
+                  <path d="M32 8v48M8 32h48M14.7 14.7l34.6 34.6M49.3 14.7L14.7 49.3" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" opacity=".4"/>
+                  <circle cx="32" cy="32" r="9" stroke="currentColor" stroke-width="2" fill="none"/>
+                  <circle cx="32" cy="32" r="2.5" fill="currentColor"/>
+                  <circle cx="32" cy="8" r="3" fill="currentColor"/>
+                  <circle cx="32" cy="56" r="3" fill="currentColor"/>
+                  <circle cx="8" cy="32" r="3" fill="currentColor"/>
+                  <circle cx="56" cy="32" r="3" fill="currentColor"/>
+                </svg>
+                <span>Chladicí technika</span>
+              </div>
+            </div>
+            <div class="gallery-caption">Servis chladicí techniky</div>
+          </div>
+
+        </div>
+        <p class="gallery-note">Vlastní fotografie doplníme – zatím zobrazujeme ilustrační grafiku.</p>
       </div>
     </section>
 
@@ -554,7 +654,7 @@
                 <div class="contact-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#2563EB"/></svg></div>
                 <div>
                   <div class="contact-label">Adresa</div>
-                  <div class="contact-value">Žírovice 179<br>Františkovy Lázně 351 01</div>
+                  <div class="contact-value">Žírovice 179/179<br>Františkovy Lázně 351 01</div>
                 </div>
               </div>
               <div class="contact-item">
@@ -644,7 +744,7 @@
             <ul>
               <li><a href="tel:+420776792419">+420 776 792 419</a></li>
               <li><a href="mailto:servis.kostler@seznam.cz">servis.kostler@seznam.cz</a></li>
-              <li>Žírovice 179, Františkovy Lázně</li>
+              <li>Žírovice 179/179, Františkovy Lázně</li>
               <li>Každý den 6:00–22:00</li>
               <li>IČO: 87833859</li>
             </ul>

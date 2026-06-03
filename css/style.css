@@ -69,13 +69,20 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 ═══════════════════════════════════════════════ */
 #loadingScreen {
   position: fixed; inset: 0; z-index: 9999;
-  background: #F8FAFC;
+  background: url('../images/loading-bg.webp') center/cover no-repeat;
   display: flex; align-items: center; justify-content: center;
   transition: opacity .4s ease, visibility .4s ease;
+}
+#loadingScreen::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: rgba(15,23,42,.70);
+  z-index: 0;
 }
 #loadingScreen.ls-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
 
 .ls-inner {
+  position: relative; z-index: 1;
   display: flex; flex-direction: column; align-items: center; gap: 24px;
   animation: lsFadeUp .5s cubic-bezier(.4,0,.2,1) both;
 }
@@ -86,18 +93,21 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .ls-logo {
   height: 80px; width: auto; object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 24px rgba(0,0,0,.4);
   animation: lsFadeUp .5s cubic-bezier(.4,0,.2,1) both;
 }
 
 .ls-name {
   font-family: 'Rajdhani', sans-serif; font-weight: 700;
-  font-size: 1.5rem; color: #0F172A; letter-spacing: .04em;
+  font-size: 1.5rem; color: #fff; letter-spacing: .04em;
+  text-shadow: 0 1px 8px rgba(0,0,0,.5);
   animation: lsFadeUp .55s .05s cubic-bezier(.4,0,.2,1) both;
 }
 
 .ls-bar {
   width: 140px; height: 3px;
-  background: rgba(0,0,0,.08);
+  background: rgba(255,255,255,.2);
   border-radius: 99px; overflow: hidden;
 }
 .ls-progress {

@@ -53,6 +53,8 @@
   }
   </script>
 
+  <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Rajdhani:wght@600;700&display=swap" rel="stylesheet">
@@ -187,7 +189,7 @@
           </div>
           <div class="hero-visual" aria-hidden="true">
             <!-- HLAVNÍ FOTO: pro výměnu změňte src níže (doporučená velikost: 600×450 px) -->
-            <img src="images/hero.jpg" alt="Servis klimatizace a tepelného čerpadla" class="hero-img" width="600" height="450" loading="eager" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+            <img src="images/hero.jpg" alt="Servis klimatizace a tepelného čerpadla" class="hero-img" width="600" height="450" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="hero-img-placeholder" style="display:none">
               <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#93C5FD" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="#BFDBFE"/></svg>
             </div>
@@ -256,7 +258,7 @@
           <article class="service-card" aria-labelledby="klima-heading">
             <div class="service-card-img-wrap">
               <!-- FOTO: Nahraďte src vlastní fotografií klimatizace (doporučená velikost: 480×270 px) -->
-              <img src="images/service-klimatizace.jpg" alt="Servis klimatizace" class="service-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-klimatizace.jpg" alt="Servis klimatizace – diagnostika a oprava" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="8" y="18" width="48" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -284,7 +286,7 @@
           <article class="service-card" aria-labelledby="tc-heading">
             <div class="service-card-img-wrap">
               <!-- FOTO: Nahraďte src vlastní fotografií tepelného čerpadla (doporučená velikost: 480×270 px) -->
-              <img src="images/service-tepelne-cerpadlo.jpg" alt="Servis tepelného čerpadla" class="service-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-tepelne-cerpadlo.jpg" alt="Servis tepelného čerpadla – oprava a seřízení" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="10" y="10" width="44" height="44" rx="7" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -311,7 +313,7 @@
           <article class="service-card" aria-labelledby="chlad-heading">
             <div class="service-card-img-wrap">
               <!-- FOTO: Nahraďte src vlastní fotografií chladicí techniky (doporučená velikost: 480×270 px) -->
-              <img src="images/service-chlazeni.jpg" alt="Chladicí technika" class="service-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-chlazeni.jpg" alt="Servis chladicí techniky a chladicích okruhů" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="12" y="8" width="32" height="40" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -339,7 +341,7 @@
           <article class="service-card service-card--highlight" aria-labelledby="pod-heading">
             <div class="service-card-img-wrap">
               <!-- FOTO: Nahraďte src vlastní fotografií podlahového vytápění (doporučená velikost: 480×270 px) -->
-              <img src="images/service-podlahove-vytapeni.jpg" alt="Čištění podlahového vytápění" class="service-card-img" loading="lazy" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-podlahove-vytapeni.jpg" alt="Čištění a proplach podlahového vytápění" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="4" y="48" width="56" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -498,34 +500,34 @@
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Rychlá oprava klimatizace ještě ten den. Technik přijel ráno a odpoledne bylo vše vyřešeno."</p>
+            <p class="testimonial-quote">„Klimatizace přestala chladit ve vedru. Zavolal jsem ráno, technik přijel tentýž den odpoledne a do hodiny měl opraveno. Rychlost a cena perfektní."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">M</div>
               <div class="author-info">
                 <div class="author-name">Martin K.</div>
-                <div class="author-location">Karlovy Vary</div>
+                <div class="author-location">Karlovy Vary · oprava klimatizace</div>
               </div>
             </div>
           </div>
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Profesionální přístup a férové ceny. Přesně to, co jsem hledal – bez zbytečného přemlouvání."</p>
+            <p class="testimonial-quote">„Potřebovala jsem pravidelnou údržbu tepelného čerpadla před zimou. Technik přišel přesně v čas, provedl servis a vše podrobně vysvětlil. Férové ceny bez skrytých poplatků."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">L</div>
               <div class="author-info">
                 <div class="author-name">Lucie H.</div>
-                <div class="author-location">Cheb</div>
+                <div class="author-location">Cheb · servis tepelného čerpadla</div>
               </div>
             </div>
           </div>
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Technik vše vysvětlil a doporučil nejlepší řešení. Servis tepelného čerpadla proběhl bez problémů."</p>
+            <p class="testimonial-quote">„Tepelné čerpadlo hlásilo chybu kompresoru. Pan Köstler diagnostiku provedl přímo u nás, objednal díl a do dvou dnů byl servis hotov. Doporučuji všem v okolí."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">J</div>
               <div class="author-info">
                 <div class="author-name">Jan M.</div>
-                <div class="author-location">Sokolov</div>
+                <div class="author-location">Sokolov · oprava tepelného čerpadla</div>
               </div>
             </div>
           </div>
@@ -718,7 +720,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2025 Servis Köstler. Všechna práva vyhrazena.</p>
+        <p>&copy; 2026 Servis Köstler. Všechna práva vyhrazena.</p>
         <p class="footer-area">Servis klimatizací a tepelných čerpadel – Karlovarský kraj</p>
       </div>
     </div>

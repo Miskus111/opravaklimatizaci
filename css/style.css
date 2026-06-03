@@ -475,7 +475,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 .why-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 18px; }
 
 .why-card {
-  padding: 28px 24px;
+  padding: 28px 28px;
   background: #fff;
   border: 1px solid var(--gray-200);
   border-top: 3px solid var(--blue);

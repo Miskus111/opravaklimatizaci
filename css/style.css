@@ -159,9 +159,20 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .header-inner { display: flex; align-items: center; gap: 16px; height: var(--header-h); }
 
-.logo { display: flex; align-items: center; flex-shrink: 0; text-decoration: none; }
+.logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
 .logo-img { height: 48px; width: auto; object-fit: contain; display: block; flex-shrink: 0; }
 .logo-img--footer { height: 44px; filter: brightness(0) invert(1); }
+.logo-text { display: flex; flex-direction: column; line-height: 1.2; }
+.logo-name {
+  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.15rem;
+  color: #fff; letter-spacing: .01em; white-space: nowrap;
+}
+.logo-tagline {
+  font-size: .6rem; color: rgba(255,255,255,.38);
+  letter-spacing: .08em; text-transform: uppercase; white-space: nowrap;
+}
+.site-footer .logo-name { color: #fff; }
+.site-footer .logo-tagline { color: rgba(255,255,255,.3); }
 
 .main-nav { flex: 1; }
 .main-nav ul { display: flex; justify-content: center; }
@@ -819,6 +830,7 @@ a.contact-value:hover { color: var(--blue); }
 
 @media (max-width: 480px) {
   .logo-img { height: 40px; }
+  .logo-tagline { display: none; }
   .why-grid { grid-template-columns: 1fr; }
   .cities-grid { grid-template-columns: 1fr; }
 }

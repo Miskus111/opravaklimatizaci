@@ -2,8 +2,32 @@
    SERVIS KÖSTLER – MAIN JS
 ═══════════════════════════════════════════════ */
 
+/* ─── OZNAMOVACÍ BANNER – konfigurace ────────────
+   enabled: true  → banner se zobrazí na webu
+   enabled: false → banner je skrytý
+   text: libovolný text oznámení
+   Příklady:
+     "Dnes jsem na odborném školení. K dispozici jsem od 17:00."
+     "Ve dnech 5.8.2026 – 20.8.2026 čerpáme dovolenou."
+──────────────────────────────────────────────── */
+const NOTICE = {
+  enabled: false,
+  text: 'Dnes jsem na odborném školení. K dispozici jsem od 17:00.'
+};
+
 (function () {
   'use strict';
+
+  /* ─── NOTICE BANNER ─────────────────────────── */
+  const noticeBanner = document.getElementById('noticeBanner');
+  if (noticeBanner && NOTICE.enabled) {
+    const textEl = noticeBanner.querySelector('.notice-banner-text');
+    if (textEl) textEl.textContent = NOTICE.text;
+    noticeBanner.hidden = false;
+    const h = noticeBanner.offsetHeight;
+    document.documentElement.style.setProperty('--notice-h', h + 'px');
+    document.body.classList.add('notice-visible');
+  }
 
   /* ─── LOADING SCREEN ─────────────────────────── */
   const ls = document.getElementById('loadingScreen');

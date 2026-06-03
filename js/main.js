@@ -74,7 +74,7 @@
   /* ─── FADE IN ON SCROLL ──────────────────────── */
   if ('IntersectionObserver' in window) {
     const fadeEls = document.querySelectorAll(
-      '.service-card, .why-card, .hiw-step, .city-card, .area-stat-card, .problem-item, .solution-steps li, .benefit, .brand-card, .stat-box, .action-card'
+      '.service-card, .why-card, .hiw-step, .city-card, .area-stat-card, .brand-card, .action-card, .testimonial-card, .cta-badge'
     );
     fadeEls.forEach(el => el.classList.add('fade-in'));
 

@@ -86,7 +86,6 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .ls-logo {
   height: 80px; width: auto; object-fit: contain;
-  filter: brightness(0);
   animation: lsFadeUp .5s cubic-bezier(.4,0,.2,1) both;
 }
 
@@ -171,8 +170,8 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 
 .logo { display: flex; align-items: center; gap: 10px; flex-shrink: 0; text-decoration: none; }
 .logo-img { height: 58px; width: auto; object-fit: contain; display: block; flex-shrink: 0; }
-.logo-img--footer { height: 52px; filter: brightness(0) invert(1); }
-.site-header .logo-img { filter: brightness(0) invert(1); }
+.logo-img--footer { height: 52px; filter: invert(1); }
+.site-header .logo-img { filter: invert(1); }
 .logo-text { display: flex; flex-direction: column; line-height: 1.2; }
 .logo-name {
   font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1.15rem;

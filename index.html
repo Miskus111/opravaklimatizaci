@@ -54,7 +54,7 @@
   }
   </script>
 
-  <link rel="preload" as="image" href="images/hero.jpg" fetchpriority="high">
+  <link rel="preload" as="image" href="images/loading-bg.webp" fetchpriority="high">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -78,21 +78,21 @@
   <header class="site-header" id="siteHeader">
     <div class="container header-inner">
 
-      <a href="#uvod" class="logo" aria-label="Servis Köstler – domovská stránka">
+      <a href="#uvod" class="logo" data-i18n-aria="logo.aria" aria-label="Servis Köstler – domovská stránka">
         <img src="images/logo.png" class="logo-img" alt="Servis Köstler">
         <div class="logo-text">
           <span class="logo-name">Servis Köstler</span>
-          <span class="logo-tagline">Tepelná čerpadla &amp; klimatizace</span>
+          <span class="logo-tagline" data-i18n="logo.tagline">Tepelná čerpadla &amp; klimatizace</span>
         </div>
       </a>
 
-      <nav class="main-nav" aria-label="Hlavní navigace">
+      <nav class="main-nav" data-i18n-aria="nav.aria" aria-label="Hlavní navigace">
         <ul>
-          <li><a href="#sluzby">Služby</a></li>
-          <li><a href="#proc-my">Proč my</a></li>
-          <li><a href="#servisni-oblast">Oblast</a></li>
-          <li><a href="#reference">Reference</a></li>
-          <li><a href="#kontakt">Kontakt</a></li>
+          <li><a href="#sluzby" data-i18n="nav.services">Služby</a></li>
+          <li><a href="#proc-my" data-i18n="nav.why">Proč my</a></li>
+          <li><a href="#servisni-oblast" data-i18n="nav.area">Oblast</a></li>
+          <li><a href="#reference" data-i18n="nav.testimonials">Reference</a></li>
+          <li><a href="#kontakt" data-i18n="nav.contact">Kontakt</a></li>
         </ul>
       </nav>
 
@@ -107,29 +107,52 @@
         </a>
       </div>
 
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
+      <!-- Přepínač jazyka / Sprachschalter -->
+      <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Jazyk / Sprache">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">
+          <span class="lang-flag" aria-hidden="true">🇨🇿</span>
+          <span class="lang-code">CS</span>
+        </button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">
+          <span class="lang-flag" aria-hidden="true">🇩🇪</span>
+          <span class="lang-code">DE</span>
+        </button>
+      </div>
+
+      <button class="burger" id="burger" data-i18n-aria="burger.aria" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>
 
     <div class="mobile-menu" id="mobileMenu" aria-hidden="true">
-      <nav aria-label="Mobilní navigace">
+      <nav data-i18n-aria="mobile.nav.aria" aria-label="Mobilní navigace">
         <ul>
-          <li><a href="#sluzby" class="mobile-nav-link">Služby</a></li>
-          <li><a href="#proc-my" class="mobile-nav-link">Proč my</a></li>
-          <li><a href="#servisni-oblast" class="mobile-nav-link">Servisní oblast</a></li>
-          <li><a href="#reference" class="mobile-nav-link">Reference</a></li>
-          <li><a href="#kontakt" class="mobile-nav-link">Kontakt</a></li>
+          <li><a href="#sluzby" class="mobile-nav-link" data-i18n="nav.services">Služby</a></li>
+          <li><a href="#proc-my" class="mobile-nav-link" data-i18n="nav.why">Proč my</a></li>
+          <li><a href="#servisni-oblast" class="mobile-nav-link" data-i18n="mobile.nav.area">Servisní oblast</a></li>
+          <li><a href="#reference" class="mobile-nav-link" data-i18n="nav.testimonials">Reference</a></li>
+          <li><a href="#kontakt" class="mobile-nav-link" data-i18n="nav.contact">Kontakt</a></li>
         </ul>
       </nav>
+      <!-- Mobilní přepínač jazyka -->
+      <div class="lang-switcher lang-switcher--mobile" role="group" aria-label="Jazyk / Sprache">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">
+          <span class="lang-flag" aria-hidden="true">🇨🇿</span>
+          <span class="lang-code">CS</span>
+        </button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">
+          <span class="lang-flag" aria-hidden="true">🇩🇪</span>
+          <span class="lang-code">DE</span>
+        </button>
+      </div>
       <div class="mobile-menu-cta">
         <a href="tel:+420776792419" class="btn btn-primary btn-block">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-          Zavolat nyní
+          <span data-i18n="mobile.cta.call">Zavolat nyní</span>
         </a>
         <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-block">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-          Napsat na WhatsApp
+          <span data-i18n="mobile.cta.wa">Napsat na WhatsApp</span>
         </a>
       </div>
     </div>
@@ -137,7 +160,7 @@
 
   <main>
 
-    <!-- OZNAMOVACÍ BANNER – zobrazuje se automaticky, pokud je NOTICE.enabled = true v js/main.js -->
+    <!-- OZNAMOVACÍ BANNER -->
     <div id="noticeBanner" class="notice-banner" hidden>
       <div class="container">
         <div class="notice-banner-inner">
@@ -156,28 +179,28 @@
           <div class="hero-text">
             <div class="hero-badge">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
-              Lokální specialista z Karlovarského kraje
+              <span data-i18n="hero.badge">Lokální specialista z Karlovarského kraje</span>
             </div>
-            <h1 class="hero-title">
+            <h1 class="hero-title" data-i18n-html="hero.title">
               Servis klimatizací a tepelných čerpadel<br>
               v <span class="highlight">Karlovarském kraji</span>
             </h1>
-            <p class="hero-subtitle">
+            <p class="hero-subtitle" data-i18n="hero.subtitle">
               Rychlé opravy, diagnostika a údržba. Výjezd technika zpravidla do 24 hodin.
             </p>
             <ul class="hero-benefits" aria-label="Klíčové výhody">
-              <li>Servis do 24 hodin</li>
-              <li>Dostupnost 6:00–22:00</li>
-              <li>Karlovarský kraj</li>
+              <li data-i18n="hero.benefit1">Servis do 24 hodin</li>
+              <li data-i18n="hero.benefit2">Dostupnost 6:00–22:00</li>
+              <li data-i18n="hero.benefit3">Karlovarský kraj</li>
             </ul>
             <div class="hero-cta">
               <a href="tel:+420776792419" class="btn btn-primary btn-lg">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-                Zavolat nyní
+                <span data-i18n="hero.btn.call">Zavolat nyní</span>
               </a>
               <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-                WhatsApp
+                <span data-i18n="hero.btn.wa">WhatsApp</span>
               </a>
             </div>
             <div class="hero-contact-line">
@@ -185,11 +208,10 @@
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
                 +420 776 792 419
               </a>
-              <span class="hero-availability">· každý den 6:00–22:00</span>
+              <span class="hero-availability" data-i18n="hero.avail">· každý den 6:00–22:00</span>
             </div>
           </div>
           <div class="hero-visual" aria-hidden="true">
-            <!-- HLAVNÍ FOTO: pro výměnu změňte src níže (doporučená velikost: 600×450 px) -->
             <img src="images/hero.jpg" alt="Servis klimatizace a tepelného čerpadla" class="hero-img" width="600" height="450" loading="eager" fetchpriority="high" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
             <div class="hero-img-placeholder" style="display:none">
               <svg width="80" height="80" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="#93C5FD" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="12" r="3" fill="#BFDBFE"/></svg>
@@ -205,9 +227,9 @@
     <section class="how-it-works" id="jak-to-funguje">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Jednoduchý postup</div>
-          <h2>Jak probíhá servis?</h2>
-          <p>Od zavolání po předání opraveného zařízení – rychle a přehledně.</p>
+          <div class="section-label" data-i18n="hiw.label">Jednoduchý postup</div>
+          <h2 data-i18n="hiw.title">Jak probíhá servis?</h2>
+          <p data-i18n="hiw.subtitle">Od zavolání po předání opraveného zařízení – rychle a přehledně.</p>
         </div>
         <div class="hiw-grid">
           <div class="hiw-step">
@@ -215,8 +237,8 @@
             <div class="hiw-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
             </div>
-            <h3>Zavoláte nebo napíšete</h3>
-            <p>Krátce popíšete problém – telefonicky nebo přes WhatsApp.</p>
+            <h3 data-i18n="hiw.s1.title">Zavoláte nebo napíšete</h3>
+            <p data-i18n="hiw.s1.text">Krátce popíšete problém – telefonicky nebo přes WhatsApp.</p>
           </div>
           <div class="hiw-arrow" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -226,8 +248,8 @@
             <div class="hiw-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round" fill="none"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Přijedeme</h3>
-            <p>Technik přijede a provede diagnostiku zařízení přímo u vás.</p>
+            <h3 data-i18n="hiw.s2.title">Přijedeme</h3>
+            <p data-i18n="hiw.s2.text">Technik přijede a provede diagnostiku zařízení přímo u vás.</p>
           </div>
           <div class="hiw-arrow" aria-hidden="true">
             <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
@@ -237,8 +259,8 @@
             <div class="hiw-icon" aria-hidden="true">
               <svg width="32" height="32" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/></svg>
             </div>
-            <h3>Opravíme</h3>
-            <p>Odstraníme závadu nebo navrhneme optimální řešení.</p>
+            <h3 data-i18n="hiw.s3.title">Opravíme</h3>
+            <p data-i18n="hiw.s3.text">Odstraníme závadu nebo navrhneme optimální řešení.</p>
           </div>
         </div>
       </div>
@@ -250,16 +272,15 @@
     <section class="services" id="sluzby" aria-labelledby="sluzby-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Co nabízíme</div>
-          <h2 id="sluzby-heading">Naše služby</h2>
-          <p>Komplexní servis tepelných čerpadel, klimatizací a chladicí techniky.</p>
+          <div class="section-label" data-i18n="svc.label">Co nabízíme</div>
+          <h2 id="sluzby-heading" data-i18n="svc.title">Naše služby</h2>
+          <p data-i18n="svc.subtitle">Komplexní servis tepelných čerpadel, klimatizací a chladicí techniky.</p>
         </div>
         <div class="services-grid">
 
           <article class="service-card" aria-labelledby="klima-heading">
             <div class="service-card-img-wrap">
-              <!-- FOTO: Nahraďte src vlastní fotografií klimatizace (doporučená velikost: 480×270 px) -->
-              <img src="images/service-klimatizace.jpg" alt="Servis klimatizace – diagnostika a oprava" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-klimatizace.jpg" data-i18n-alt="s1.alt" alt="Servis klimatizace – diagnostika a oprava" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="8" y="18" width="48" height="20" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -279,15 +300,14 @@
                   <path d="M18 18h18M18 22h12" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 id="klima-heading">Servis klimatizací</h3>
-              <p>Diagnostika, opravy a pravidelná údržba klimatizačních systémů všech značek.</p>
+              <h3 id="klima-heading" data-i18n="s1.title">Servis klimatizací</h3>
+              <p data-i18n="s1.text">Diagnostika, opravy a pravidelná údržba klimatizačních systémů všech značek.</p>
             </div>
           </article>
 
           <article class="service-card" aria-labelledby="tc-heading">
             <div class="service-card-img-wrap">
-              <!-- FOTO: Nahraďte src vlastní fotografií tepelného čerpadla (doporučená velikost: 480×270 px) -->
-              <img src="images/service-tepelne-cerpadlo.jpg" alt="Servis tepelného čerpadla – oprava a seřízení" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-tepelne-cerpadlo.jpg" data-i18n-alt="s2.alt" alt="Servis tepelného čerpadla – oprava a seřízení" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="10" y="10" width="44" height="44" rx="7" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -306,15 +326,14 @@
                   <circle cx="24" cy="24" r="3.5" fill="#F97316"/>
                 </svg>
               </div>
-              <h3 id="tc-heading">Servis tepelných čerpadel</h3>
-              <p>Opravy, seřízení a revize tepelných čerpadel pro vytápění i chlazení.</p>
+              <h3 id="tc-heading" data-i18n="s2.title">Servis tepelných čerpadel</h3>
+              <p data-i18n="s2.text">Opravy, seřízení a revize tepelných čerpadel pro vytápění i chlazení.</p>
             </div>
           </article>
 
           <article class="service-card" aria-labelledby="chlad-heading">
             <div class="service-card-img-wrap">
-              <!-- FOTO: Nahraďte src vlastní fotografií chladicí techniky (doporučená velikost: 480×270 px) -->
-              <img src="images/service-chlazeni.jpg" alt="Servis chladicí techniky a chladicích okruhů" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-chlazeni.jpg" data-i18n-alt="s3.alt" alt="Servis chladicí techniky a chladicích okruhů" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="12" y="8" width="32" height="40" rx="5" stroke="currentColor" stroke-width="2" fill="none"/>
@@ -334,15 +353,14 @@
                   <path d="M24 8v4M20 10l4 2 4-2" stroke="#2563EB" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                 </svg>
               </div>
-              <h3 id="chlad-heading">Chladicí technika</h3>
-              <p>Servis chladicích okruhů a průmyslové chladicí techniky.</p>
+              <h3 id="chlad-heading" data-i18n="s3.title">Chladicí technika</h3>
+              <p data-i18n="s3.text">Servis chladicích okruhů a průmyslové chladicí techniky.</p>
             </div>
           </article>
 
           <article class="service-card service-card--highlight" aria-labelledby="pod-heading">
             <div class="service-card-img-wrap">
-              <!-- FOTO: Nahraďte src vlastní fotografií podlahového vytápění (doporučená velikost: 480×270 px) -->
-              <img src="images/service-podlahove-vytapeni.jpg" alt="Čištění a proplach podlahového vytápění" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+              <img src="images/service-podlahove-vytapeni.jpg" data-i18n-alt="s4.alt" alt="Čištění a proplach podlahového vytápění" class="service-card-img" loading="lazy" decoding="async" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
               <div class="service-card-img-ph" aria-hidden="true">
                 <svg width="52" height="52" viewBox="0 0 64 64" fill="none">
                   <rect x="4" y="48" width="56" height="8" rx="3" fill="none" stroke="currentColor" stroke-width="2"/>
@@ -360,8 +378,8 @@
                   <path d="M8 20c2 0 2-4 4-4s2 4 4 4 2-4 4-4 2 4 4 4 2-4 4-4" stroke="#F97316" stroke-width="1.5" stroke-linecap="round"/>
                 </svg>
               </div>
-              <h3 id="pod-heading">Čištění podlahového vytápění</h3>
-              <p>Proplach a čištění podlahových okruhů pro obnovu efektivity vytápění.</p>
+              <h3 id="pod-heading" data-i18n="s4.title">Čištění podlahového vytápění</h3>
+              <p data-i18n="s4.text">Proplach a čištění podlahových okruhů pro obnovu efektivity vytápění.</p>
             </div>
           </article>
 
@@ -375,52 +393,52 @@
     <section class="why-us" id="proc-my" aria-labelledby="why-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Naše přednosti</div>
-          <h2 id="why-heading">Proč zvolit Servis Köstler?</h2>
-          <p>Jsme lokální firma z Karlovarského kraje. Znáte nás osobně, víte na koho voláte.</p>
+          <div class="section-label" data-i18n="why.label">Naše přednosti</div>
+          <h2 id="why-heading" data-i18n="why.title">Proč zvolit Servis Köstler?</h2>
+          <p data-i18n="why.subtitle">Jsme lokální firma z Karlovarského kraje. Znáte nás osobně, víte na koho voláte.</p>
         </div>
         <div class="why-grid">
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
-            <h3>Servis do 24 hodin</h3>
-            <p>Výjezd technika zpravidla do 24 hodin od vašeho zavolání.</p>
+            <h3 data-i18n="why1.title">Servis do 24 hodin</h3>
+            <p data-i18n="why1.text">Výjezd technika zpravidla do 24 hodin od vašeho zavolání.</p>
           </div>
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
             </div>
-            <h3>Odborný servis</h3>
-            <p>Specializujeme se výhradně na tepelná čerpadla a klimatizace.</p>
+            <h3 data-i18n="why2.title">Odborný servis</h3>
+            <p data-i18n="why2.text">Specializujeme se výhradně na tepelná čerpadla a klimatizace.</p>
           </div>
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
             </div>
-            <h3>Karlovarský kraj</h3>
-            <p>Jsme lokální firma, která zná váš region a rychle přijede.</p>
+            <h3 data-i18n="why3.title">Karlovarský kraj</h3>
+            <p data-i18n="why3.text">Jsme lokální firma, která zná váš region a rychle přijede.</p>
           </div>
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
             </div>
-            <h3>Dostupnost 6:00–22:00</h3>
-            <p>Dosahujete nás každý den včetně víkendů a svátků.</p>
+            <h3 data-i18n="why4.title">Dostupnost 6:00–22:00</h3>
+            <p data-i18n="why4.text">Dosahujete nás každý den včetně víkendů a svátků.</p>
           </div>
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><circle cx="11" cy="11" r="8" stroke="currentColor" stroke-width="1.5"/><path d="M21 21l-4.35-4.35" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
             </div>
-            <h3>Moderní diagnostika</h3>
-            <p>Diagnostika přímo na místě s moderním servisním vybavením.</p>
+            <h3 data-i18n="why5.title">Moderní diagnostika</h3>
+            <p data-i18n="why5.text">Diagnostika přímo na místě s moderním servisním vybavením.</p>
           </div>
           <div class="why-card">
             <div class="why-icon" aria-hidden="true">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><circle cx="12" cy="7" r="4" stroke="currentColor" stroke-width="1.5"/></svg>
             </div>
-            <h3>Individuální přístup</h3>
-            <p>Každý případ řešíme individuálně, bez šablonových postupů.</p>
+            <h3 data-i18n="why6.title">Individuální přístup</h3>
+            <p data-i18n="why6.text">Každý případ řešíme individuálně, bez šablonových postupů.</p>
           </div>
         </div>
       </div>
@@ -432,21 +450,21 @@
     <section class="service-area" id="servisni-oblast" aria-labelledby="area-heading">
       <div class="container">
         <div class="section-header section-header--light">
-          <div class="section-label section-label--light">Kde servisujeme</div>
-          <h2 id="area-heading">Servisní oblast</h2>
-          <p>Působíme v celém Karlovarském kraji.</p>
+          <div class="section-label section-label--light" data-i18n="area.label">Kde servisujeme</div>
+          <h2 id="area-heading" data-i18n="area.title">Servisní oblast</h2>
+          <p data-i18n="area.subtitle">Působíme v celém Karlovarském kraji.</p>
         </div>
         <div class="area-inner">
           <div class="area-cities">
-            <h3 class="area-cities-title">Hlavní oblasti výjezdů</h3>
+            <h3 class="area-cities-title" data-i18n="area.cities.h">Hlavní oblasti výjezdů</h3>
             <div class="cities-grid">
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Karlovy Vary</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Cheb</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Sokolov</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Mariánské Lázně</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Ostrov</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span>Františkovy Lázně</span></div>
-              <div class="city-card city-card--more"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span>a celý kraj</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city1">Karlovy Vary</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city2">Cheb</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city3">Sokolov</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city4">Mariánské Lázně</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city5">Ostrov</span></div>
+              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city6">Františkovy Lázně</span></div>
+              <div class="city-card city-card--more"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="area.city7">a celý kraj</span></div>
             </div>
           </div>
           <div class="area-stats">
@@ -456,8 +474,8 @@
               </div>
               <div class="area-stat-body">
                 <div class="area-stat-num">24h</div>
-                <div class="area-stat-label">Výjezd technika</div>
-                <p>Výjezd zpravidla do 24 hodin po celém kraji.</p>
+                <div class="area-stat-label" data-i18n="area.s1.label">Výjezd technika</div>
+                <p data-i18n="area.s1.text">Výjezd zpravidla do 24 hodin po celém kraji.</p>
               </div>
             </div>
             <div class="area-stat-card">
@@ -466,20 +484,20 @@
               </div>
               <div class="area-stat-body">
                 <div class="area-stat-num">6–22</div>
-                <div class="area-stat-label">Každý den</div>
-                <p>Telefonicky dostupní každý den, svátky nevyjímaje.</p>
+                <div class="area-stat-label" data-i18n="area.s2.label">Každý den</div>
+                <p data-i18n="area.s2.text">Telefonicky dostupní každý den, svátky nevyjímaje.</p>
               </div>
             </div>
             <div class="area-cta-box">
-              <p>Máte problém s klimatizací nebo tepelným čerpadlem?</p>
+              <p data-i18n="area.cta.text">Máte problém s klimatizací nebo tepelným čerpadlem?</p>
               <div class="area-cta-btns">
                 <a href="tel:+420776792419" class="btn btn-primary btn-lg">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-                  Zavolat nyní
+                  <span data-i18n="area.btn.call">Zavolat nyní</span>
                 </a>
                 <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-                  WhatsApp
+                  <span data-i18n="area.btn.wa">WhatsApp</span>
                 </a>
               </div>
             </div>
@@ -494,41 +512,41 @@
     <section class="testimonials" id="reference" aria-labelledby="ref-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Spokojení zákazníci</div>
-          <h2 id="ref-heading">Co říkají naši zákazníci</h2>
-          <p>Každý den pomáháme zákazníkům v celém Karlovarském kraji.</p>
+          <div class="section-label" data-i18n="ref.label">Spokojení zákazníci</div>
+          <h2 id="ref-heading" data-i18n="ref.title">Co říkají naši zákazníci</h2>
+          <p data-i18n="ref.subtitle">Každý den pomáháme zákazníkům v celém Karlovarském kraji.</p>
         </div>
         <div class="testimonials-grid">
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Klimatizace Panasonic přestala chladit uprostřed letních veder. Zavolal jsem ráno, technik přijel tentýž den odpoledne, doplnil chladivo a zkontroloval těsnost – do hodiny hotovo. Rychlost a cena perfektní."</p>
+            <p class="testimonial-quote" data-i18n="r1.quote">„Klimatizace Panasonic přestala chladit uprostřed letních veder. Zavolal jsem ráno, technik přijel tentýž den odpoledne, doplnil chladivo a zkontroloval těsnost – do hodiny hotovo. Rychlost a cena perfektní."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">M</div>
               <div class="author-info">
-                <div class="author-name">Martin K.</div>
-                <div class="author-location">Karlovy Vary · oprava klimatizace Panasonic</div>
+                <div class="author-name" data-i18n="r1.author">Martin K.</div>
+                <div class="author-location" data-i18n="r1.location">Karlovy Vary · oprava klimatizace Panasonic</div>
               </div>
             </div>
           </div>
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Potřebovala jsem roční servis tepelného čerpadla Vaillant před zimní sezonou. Technik přišel přesně v čas, provedl kompletní revizi, vyčistil filtry a vše podrobně vysvětlil. Férové ceny bez skrytých poplatků."</p>
+            <p class="testimonial-quote" data-i18n="r2.quote">„Potřebovala jsem roční servis tepelného čerpadla Vaillant před zimní sezonou. Technik přišel přesně v čas, provedl kompletní revizi, vyčistil filtry a vše podrobně vysvětlil. Férové ceny bez skrytých poplatků."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">L</div>
               <div class="author-info">
-                <div class="author-name">Lucie H.</div>
-                <div class="author-location">Cheb · roční servis tepelného čerpadla Vaillant</div>
+                <div class="author-name" data-i18n="r2.author">Lucie H.</div>
+                <div class="author-location" data-i18n="r2.location">Cheb · roční servis tepelného čerpadla Vaillant</div>
               </div>
             </div>
           </div>
           <div class="testimonial-card">
             <div class="stars" aria-label="5 z 5 hvězd">★★★★★</div>
-            <p class="testimonial-quote">„Tepelné čerpadlo IVT hlásilo chybu kompresoru a přestalo topit. Pan Köstler diagnostiku provedl přímo u nás, objednal náhradní díl a do dvou dnů byl servis hotov – v zimě neocenitelná rychlost. Doporučuji všem v okolí."</p>
+            <p class="testimonial-quote" data-i18n="r3.quote">„Tepelné čerpadlo IVT hlásilo chybu kompresoru a přestalo topit. Pan Köstler diagnostiku provedl přímo u nás, objednal náhradní díl a do dvou dnů byl servis hotov – v zimě neocenitelná rychlost. Doporučuji všem v okolí."</p>
             <div class="testimonial-author">
               <div class="author-avatar" aria-hidden="true">J</div>
               <div class="author-info">
-                <div class="author-name">Jan M.</div>
-                <div class="author-location">Sokolov · oprava tepelného čerpadla IVT</div>
+                <div class="author-name" data-i18n="r3.author">Jan M.</div>
+                <div class="author-location" data-i18n="r3.location">Sokolov · oprava tepelného čerpadla IVT</div>
               </div>
             </div>
           </div>
@@ -542,9 +560,9 @@
     <section class="brands" id="znacky" aria-labelledby="brands-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Zkušenosti se značkami</div>
-          <h2 id="brands-heading">Servisované značky</h2>
-          <p>Servisujeme tepelná čerpadla a klimatizace různých výrobců.</p>
+          <div class="section-label" data-i18n="brands.label">Zkušenosti se značkami</div>
+          <h2 id="brands-heading" data-i18n="brands.title">Servisované značky</h2>
+          <p data-i18n="brands.subtitle">Servisujeme tepelná čerpadla a klimatizace různých výrobců.</p>
         </div>
         <div class="brands-grid">
           <div class="brand-card"><span class="brand-name-text">Panasonic</span></div>
@@ -553,7 +571,7 @@
           <div class="brand-card"><span class="brand-name-text">Bosch</span></div>
           <div class="brand-card"><span class="brand-name-text">Viessmann</span></div>
         </div>
-        <p class="brands-note">Nevidíte svou značku? Neváhejte se zeptat – nejspíše ji také servisujeme.</p>
+        <p class="brands-note" data-i18n="brands.note">Nevidíte svou značku? Neváhejte se zeptat – nejspíše ji také servisujeme.</p>
       </div>
     </section>
 
@@ -562,30 +580,30 @@
     ═══════════════════════════════════════════════ -->
     <section class="cta-section" aria-labelledby="cta-heading">
       <div class="container cta-inner">
-        <h2 id="cta-heading">Potřebujete servis klimatizace nebo tepelného čerpadla?</h2>
-        <p class="cta-desc">Výjezd technika zpravidla do 24 hodin. Dostupní každý den 6:00–22:00.</p>
+        <h2 id="cta-heading" data-i18n="cta.title">Potřebujete servis klimatizace nebo tepelného čerpadla?</h2>
+        <p class="cta-desc" data-i18n="cta.subtitle">Výjezd technika zpravidla do 24 hodin. Dostupní každý den 6:00–22:00.</p>
         <div class="cta-btns">
           <a href="tel:+420776792419" class="btn btn-white btn-lg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-            Zavolat: +420 776 792 419
+            <span data-i18n="cta.btn.call">Zavolat: +420 776 792 419</span>
           </a>
           <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="btn btn-whatsapp btn-lg">
             <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-            Napsat na WhatsApp
+            <span data-i18n="cta.btn.wa">Napsat na WhatsApp</span>
           </a>
         </div>
         <div class="cta-badges">
           <div class="cta-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6v6l4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-            Servis do 24 hodin
+            <span data-i18n="cta.badge1">Servis do 24 hodin</span>
           </div>
           <div class="cta-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" stroke="currentColor" stroke-width="1.5" fill="none"/></svg>
-            Každý den 6:00–22:00
+            <span data-i18n="cta.badge2">Každý den 6:00–22:00</span>
           </div>
           <div class="cta-badge">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>
-            Karlovarský kraj
+            <span data-i18n="cta.badge3">Karlovarský kraj</span>
           </div>
         </div>
       </div>
@@ -597,9 +615,9 @@
     <section class="contact" id="kontakt" aria-labelledby="contact-heading">
       <div class="container">
         <div class="section-header">
-          <div class="section-label">Kontakt</div>
-          <h2 id="contact-heading">Kontaktujte nás</h2>
-          <p>Volejte nebo napište na WhatsApp. Jsme vám k dispozici každý den 6:00–22:00.</p>
+          <div class="section-label" data-i18n="ct.label">Kontakt</div>
+          <h2 id="contact-heading" data-i18n="ct.title">Kontaktujte nás</h2>
+          <p data-i18n="ct.subtitle">Volejte nebo napište na WhatsApp. Jsme vám k dispozici každý den 6:00–22:00.</p>
         </div>
         <div class="contact-inner">
           <div class="contact-info">
@@ -607,30 +625,30 @@
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="#2563EB"/></svg></div>
                 <div>
-                  <div class="contact-label">Telefon</div>
+                  <div class="contact-label" data-i18n="ct.phone.label">Telefon</div>
                   <a href="tel:+420776792419" class="contact-value">+420 776 792 419</a>
-                  <div class="contact-note">Každý den 6:00–22:00</div>
+                  <div class="contact-note" data-i18n="ct.phone.note">Každý den 6:00–22:00</div>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" fill="#2563EB"/></svg></div>
                 <div>
-                  <div class="contact-label">E-mail</div>
+                  <div class="contact-label" data-i18n="ct.email.label">E-mail</div>
                   <a href="mailto:servis.kostler@seznam.cz" class="contact-value">servis.kostler@seznam.cz</a>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="#2563EB"/></svg></div>
                 <div>
-                  <div class="contact-label">Adresa</div>
+                  <div class="contact-label" data-i18n="ct.addr.label">Adresa</div>
                   <div class="contact-value">Žírovice 179/179<br>Františkovy Lázně 351 01</div>
                 </div>
               </div>
               <div class="contact-item">
                 <div class="contact-icon" aria-hidden="true"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zM12 20c-4.42 0-8-3.58-8-8s3.58-8 8-8 8 3.58 8 8-3.58 8-8 8zm.5-13H11v6l5.25 3.15.75-1.23-4.5-2.67V7z" fill="#2563EB"/></svg></div>
                 <div>
-                  <div class="contact-label">Provozní doba</div>
-                  <div class="contact-value">Každý den 6:00–22:00</div>
+                  <div class="contact-label" data-i18n="ct.hours.label">Provozní doba</div>
+                  <div class="contact-value" data-i18n="ct.hours.value">Každý den 6:00–22:00</div>
                   <div class="contact-note">IČO: 87833859</div>
                 </div>
               </div>
@@ -652,13 +670,13 @@
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="white"/></svg>
               </div>
               <div class="action-card-body">
-                <h3>Zavolejte nám</h3>
-                <p>Dostupní <strong>každý den 6:00–22:00</strong>. Vždy se dovoláte živé osobě.</p>
+                <h3 data-i18n="ct.call.title">Zavolejte nám</h3>
+                <p data-i18n-html="ct.call.text">Dostupní <strong>každý den 6:00–22:00</strong>. Vždy se dovoláte živé osobě.</p>
                 <div class="action-card-number">+420 776 792 419</div>
               </div>
               <a href="tel:+420776792419" class="btn btn-white btn-lg btn-block">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-                Zavolat nyní
+                <span data-i18n="ct.call.btn">Zavolat nyní</span>
               </a>
             </div>
             <div class="action-card action-card--whatsapp">
@@ -666,13 +684,13 @@
                 <svg width="36" height="36" viewBox="0 0 24 24" fill="none"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="white"/></svg>
               </div>
               <div class="action-card-body">
-                <h3>WhatsApp</h3>
-                <p>Napište nám zprávu přes WhatsApp. Odpovíme co nejdříve.</p>
+                <h3 data-i18n="ct.wa.title">WhatsApp</h3>
+                <p data-i18n="ct.wa.text">Napište nám zprávu přes WhatsApp. Odpovíme co nejdříve.</p>
                 <div class="action-card-number">+420 776 792 419</div>
               </div>
               <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="btn btn-white btn-lg btn-block">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-                Napsat na WhatsApp
+                <span data-i18n="ct.wa.btn">Napsat na WhatsApp</span>
               </a>
             </div>
           </div>
@@ -693,52 +711,53 @@
             <img src="images/logo.png" class="logo-img logo-img--footer" alt="Servis Köstler">
             <div class="logo-text">
               <span class="logo-name">Servis Köstler</span>
-              <span class="logo-tagline">Tepelná čerpadla &amp; klimatizace</span>
+              <span class="logo-tagline" data-i18n="ft.tagline">Tepelná čerpadla &amp; klimatizace</span>
             </div>
           </a>
-          <p class="footer-desc">Profesionální servis tepelných čerpadel, klimatizací a chladicí techniky v Karlovarském kraji.</p>
+          <p class="footer-desc" data-i18n="ft.desc">Profesionální servis tepelných čerpadel, klimatizací a chladicí techniky v Karlovarském kraji.</p>
         </div>
         <div class="footer-nav">
           <div class="footer-col">
-            <h4>Služby</h4>
+            <h4 data-i18n="ft.svc.h">Služby</h4>
             <ul>
-              <li><a href="#sluzby">Servis klimatizací</a></li>
-              <li><a href="#sluzby">Servis tepelných čerpadel</a></li>
-              <li><a href="#sluzby">Chladicí technika</a></li>
-              <li><a href="#sluzby">Čištění podlahového vytápění</a></li>
+              <li><a href="#sluzby" data-i18n="ft.s1">Servis klimatizací</a></li>
+              <li><a href="#sluzby" data-i18n="ft.s2">Servis tepelných čerpadel</a></li>
+              <li><a href="#sluzby" data-i18n="ft.s3">Chladicí technika</a></li>
+              <li><a href="#sluzby" data-i18n="ft.s4">Čištění podlahového vytápění</a></li>
             </ul>
           </div>
           <div class="footer-col">
-            <h4>Kontakt</h4>
+            <h4 data-i18n="ft.ct.h">Kontakt</h4>
             <ul>
               <li><a href="tel:+420776792419">+420 776 792 419</a></li>
               <li><a href="mailto:servis.kostler@seznam.cz">servis.kostler@seznam.cz</a></li>
               <li>Žírovice 179/179, Františkovy Lázně</li>
-              <li>Každý den 6:00–22:00</li>
+              <li data-i18n="ft.hours">Každý den 6:00–22:00</li>
               <li>IČO: 87833859</li>
             </ul>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>&copy; 2026 Servis Köstler. Všechna práva vyhrazena.</p>
-        <p class="footer-area">Servis klimatizací a tepelných čerpadel – Karlovarský kraj</p>
+        <p data-i18n="ft.copy">&copy; 2026 Servis Köstler. Všechna práva vyhrazena.</p>
+        <p class="footer-area" data-i18n="ft.area">Servis klimatizací a tepelných čerpadel – Karlovarský kraj</p>
       </div>
     </div>
   </footer>
 
-  <!-- Mobile FABs – viditelné pouze na mobilu -->
+  <!-- Mobile FABs -->
   <div class="mob-fab" role="group" aria-label="Rychlý kontakt">
     <a href="tel:+420776792419" class="mob-fab-btn mob-fab-phone">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/></svg>
-      Volat
+      <span data-i18n="fab.call">Volat</span>
     </a>
     <a href="https://wa.me/420776792419" target="_blank" rel="noopener noreferrer" class="mob-fab-btn mob-fab-wa">
       <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z" fill="currentColor"/></svg>
-      WhatsApp
+      <span data-i18n="fab.wa">WhatsApp</span>
     </a>
   </div>
 
+  <script src="js/translations.js"></script>
   <script src="js/main.js" defer></script>
 </body>
 </html>

@@ -204,6 +204,33 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 .main-nav a.active { color: #BFDBFE; background: rgba(37,99,235,.15); }
 
 .header-cta { display: flex; align-items: center; gap: 10px; flex-shrink: 0; }
+
+/* ─── LANGUAGE SWITCHER ───────────────────────── */
+.lang-switcher {
+  display: flex; align-items: center; gap: 2px;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.12);
+  border-radius: var(--r-p); padding: 3px; flex-shrink: 0;
+}
+.lang-btn {
+  display: flex; align-items: center; gap: 5px;
+  background: none; border: none; cursor: pointer;
+  color: rgba(255,255,255,.55); font-size: .78rem; font-weight: 700;
+  padding: 5px 9px; border-radius: var(--r-p);
+  transition: all var(--t); line-height: 1; letter-spacing: .04em;
+  font-family: inherit;
+}
+.lang-btn.active { background: rgba(255,255,255,.16); color: #fff; }
+.lang-btn:hover:not(.active) { color: rgba(255,255,255,.85); }
+.lang-flag { font-size: 1rem; line-height: 1; }
+.lang-switcher--mobile {
+  margin: 12px 0 4px; padding: 4px;
+  background: rgba(255,255,255,.05);
+  border-color: rgba(255,255,255,.08);
+  width: fit-content;
+}
+.lang-switcher--mobile .lang-btn { font-size: .85rem; padding: 7px 14px; }
+
 .header-phone {
   display: flex; align-items: center; gap: 6px;
   color: rgba(255,255,255,.86); font-size: .875rem; font-weight: 600;
@@ -243,6 +270,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   .main-nav { display: none; }
   .header-cta { display: none; }
   .burger { display: flex; }
+  .header-inner > .lang-switcher { display: none; }
 }
 
 /* ═══════════════════════════════════════════════

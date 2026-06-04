@@ -5,15 +5,67 @@
 /* ─── OZNAMOVACÍ BANNER – konfigurace ────────────
    enabled: true  → banner se zobrazí na webu
    enabled: false → banner je skrytý
-   text: libovolný text oznámení
-   Příklady:
-     "Dnes jsem na odborném školení. K dispozici jsem od 17:00."
-     "Ve dnech 5.8.2026 – 20.8.2026 čerpáme dovolenou."
+   text: { cs: '...', de: '...' }
 ──────────────────────────────────────────────── */
 const NOTICE = {
   enabled: false,
-  text: 'Dnes jsem na odborném školení. K dispozici jsem od 17:00.'
+  text: {
+    cs: 'Dnes jsem na odborném školení. K dispozici jsem od 17:00.',
+    de: 'Heute bin ich auf einer Fachschulung. Ab 17:00 Uhr bin ich wieder erreichbar.'
+  }
 };
+
+/* ─── I18N ───────────────────────────────────── */
+// 1. localStorage má přednost, 2. jazyk prohlížeče, 3. výchozí CS
+let currentLang = localStorage.getItem('sk_lang')
+  || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'cs');
+
+function applyLang(lang) {
+  const T = window.TRANSLATIONS;
+  if (!T || !T[lang]) { console.warn('Translations not loaded for:', lang); return; }
+  const t = T[lang];
+
+  document.documentElement.lang = lang;
+
+  if (t['meta.title']) document.title = t['meta.title'];
+
+  const metaDesc = document.querySelector('meta[name="description"]');
+  if (metaDesc && t['meta.description']) metaDesc.content = t['meta.description'];
+
+  const metaKw = document.querySelector('meta[name="keywords"]');
+  if (metaKw && t['meta.keywords']) metaKw.content = t['meta.keywords'];
+
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const val = t[el.dataset.i18n];
+    if (val !== undefined) el.textContent = val;
+  });
+
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const val = t[el.dataset.i18nHtml];
+    if (val !== undefined) el.innerHTML = val;
+  });
+
+  document.querySelectorAll('[data-i18n-alt]').forEach(el => {
+    const val = t[el.dataset.i18nAlt];
+    if (val !== undefined) el.alt = val;
+  });
+
+  document.querySelectorAll('[data-i18n-aria]').forEach(el => {
+    const val = t[el.dataset.i18nAria];
+    if (val !== undefined) el.setAttribute('aria-label', val);
+  });
+
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.classList.toggle('active', btn.dataset.lang === lang);
+  });
+
+  const noticeTextEl = document.querySelector('.notice-banner-text');
+  if (noticeTextEl && NOTICE.enabled) {
+    noticeTextEl.textContent = NOTICE.text[lang] || NOTICE.text.cs;
+  }
+
+  currentLang = lang;
+}
 
 (function () {
   'use strict';
@@ -22,7 +74,7 @@ const NOTICE = {
   const noticeBanner = document.getElementById('noticeBanner');
   if (noticeBanner && NOTICE.enabled) {
     const textEl = noticeBanner.querySelector('.notice-banner-text');
-    if (textEl) textEl.textContent = NOTICE.text;
+    if (textEl) textEl.textContent = NOTICE.text[currentLang] || NOTICE.text.cs;
     noticeBanner.hidden = false;
     const h = noticeBanner.offsetHeight;
     document.documentElement.style.setProperty('--notice-h', h + 'px');
@@ -80,6 +132,18 @@ const NOTICE = {
       }
     });
   }
+
+  /* ─── LANGUAGE SWITCHER ──────────────────────── */
+  document.querySelectorAll('.lang-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const lang = btn.dataset.lang;
+      if (lang === currentLang) return;
+      localStorage.setItem('sk_lang', lang);
+      applyLang(lang);
+    });
+  });
+
+  applyLang(currentLang);
 
   /* ─── SMOOTH SCROLL ──────────────────────────── */
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {

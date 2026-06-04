@@ -11,6 +11,9 @@
   <meta name="author" content="Servis Köstler">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://www.serviskostler.cz/">
+  <link rel="alternate" hreflang="cs" href="https://www.serviskostler.cz/">
+  <link rel="alternate" hreflang="de" href="https://www.serviskostler.cz/">
+  <link rel="alternate" hreflang="x-default" href="https://www.serviskostler.cz/">
 
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://www.serviskostler.cz/">
@@ -104,7 +107,17 @@
         </a>
       </div>
 
-      <button class="burger" id="burger" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
+      <!-- Přepínač jazyka / Sprachschalter -->
+      <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Jazyk / Sprache">
+        <button class="lang-btn" data-lang="cs" aria-label="Čeština">
+          <span class="lang-flag" aria-hidden="true">🇨🇿</span>
+        </button>
+        <button class="lang-btn" data-lang="de" aria-label="Deutsch">
+          <span class="lang-flag" aria-hidden="true">🇩🇪</span>
+        </button>
+      </div>
+
+      <button class="burger" id="burger" data-i18n-aria="burger.aria" aria-label="Otevřít menu" aria-expanded="false" aria-controls="mobileMenu">
         <span></span><span></span><span></span>
       </button>
     </div>

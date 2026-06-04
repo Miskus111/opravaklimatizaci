@@ -34,9 +34,8 @@ const serviceAreas = {
 };
 
 /* ─── I18N ───────────────────────────────────── */
-// 1. localStorage má přednost, 2. jazyk prohlížeče, 3. výchozí CS
-let currentLang = localStorage.getItem('sk_lang')
-  || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'cs');
+// 1. localStorage má přednost (uložená volba uživatele), 2. výchozí CS
+let currentLang = localStorage.getItem('sk_lang') || 'cs';
 
 function applyLang(lang) {
   const T = window.TRANSLATIONS;

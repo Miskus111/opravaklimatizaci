@@ -566,25 +566,10 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px;
 }
 
-/* Přeshraniční oblast – DE verze */
-.area-crossborder { display: none; margin-top: 28px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1); }
-html[lang="de"] .area-crossborder { display: block; }
-
-.area-crossborder-header { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; }
-.area-crossborder-flag { border-radius: 2px; box-shadow: 0 0 0 1px rgba(255,255,255,.15); flex-shrink: 0; }
-.area-crossborder-title {
-  font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 1rem;
-  color: #fff; letter-spacing: .01em; margin: 0;
-}
-.area-crossborder-text {
-  font-size: .875rem; color: rgba(255,255,255,.65); line-height: 1.7; margin-bottom: 16px;
-}
-.area-crossborder-text strong { color: rgba(255,255,255,.88); font-weight: 600; }
-.area-de-cities-label {
-  color: rgba(255,255,255,.4); font-size: .7rem; font-weight: 700;
-  text-transform: uppercase; letter-spacing: .1em; margin-bottom: 10px;
-}
-.cities-grid--de { margin-top: 0; }
+/* Přepínání CS/DE měst v mřížce */
+.city-card--de { display: none; }
+html[lang="de"] .city-card--cs { display: none; }
+html[lang="de"] .city-card--de { display: flex; }
 
 .city-card {
   display: flex; align-items: center; gap: 10px;

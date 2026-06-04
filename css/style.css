@@ -213,16 +213,16 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   border-radius: var(--r-p); padding: 3px; flex-shrink: 0;
 }
 .lang-btn {
-  display: flex; align-items: center; gap: 4px;
+  display: flex; align-items: center; justify-content: center;
   background: none; border: none; cursor: pointer;
-  color: rgba(255,255,255,.55); font-size: .78rem; font-weight: 700;
-  padding: 5px 9px; border-radius: var(--r-p);
-  transition: all var(--t); line-height: 1; letter-spacing: .04em;
+  padding: 5px 7px; border-radius: var(--r-p);
+  transition: all var(--t); line-height: 1;
   font-family: inherit; touch-action: manipulation;
+  opacity: .55;
 }
-.lang-btn.active { background: rgba(255,255,255,.18); color: #fff; }
-.lang-btn:hover:not(.active) { color: rgba(255,255,255,.85); }
-.lang-flag { font-size: 1rem; line-height: 1; }
+.lang-btn.active { background: rgba(255,255,255,.18); opacity: 1; }
+.lang-btn:hover:not(.active) { opacity: .85; }
+.lang-flag { font-size: 1.15rem; line-height: 1; }
 
 .header-phone {
   display: flex; align-items: center; gap: 6px;
@@ -264,8 +264,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   .header-cta { display: none; }
   .burger { display: flex; }
   .logo { flex: 1; }
-  .lang-btn { padding: 5px 7px; font-size: .72rem; gap: 3px; }
-  .lang-flag { font-size: .9rem; }
+  .lang-flag { font-size: 1.05rem; }
 }
 
 /* ═══════════════════════════════════════════════

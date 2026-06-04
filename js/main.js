@@ -16,11 +16,14 @@ const NOTICE = {
 };
 
 /* ─── I18N ───────────────────────────────────── */
-let currentLang = localStorage.getItem('sk_lang') || 'cs';
+// 1. localStorage má přednost, 2. jazyk prohlížeče, 3. výchozí CS
+let currentLang = localStorage.getItem('sk_lang')
+  || (navigator.language && navigator.language.toLowerCase().startsWith('de') ? 'de' : 'cs');
 
 function applyLang(lang) {
-  if (!window.TRANSLATIONS || !window.TRANSLATIONS[lang]) return;
-  const t = window.TRANSLATIONS[lang];
+  const T = window.TRANSLATIONS;
+  if (!T || !T[lang]) { console.warn('Translations not loaded for:', lang); return; }
+  const t = T[lang];
 
   document.documentElement.lang = lang;
 

@@ -4,7 +4,8 @@
    Text hinzufügen/ändern: Schlüssel unten suchen und Wert ändern.
 ═══════════════════════════════════════════════ */
 
-const TRANSLATIONS = {
+// window.TRANSLATIONS (ne const) – musí být přístupné přes window z main.js
+window.TRANSLATIONS = {
   cs: {
     'meta.title':       'Servis Köstler – Servis klimatizací Karlovy Vary | Tepelná čerpadla Karlovarský kraj',
     'meta.description': 'Servis klimatizací a tepelných čerpadel v Karlovarském kraji. Karlovy Vary, Cheb, Sokolov. Výjezd do 24 hodin. Každý den 6:00–22:00. +420 776 792 419',

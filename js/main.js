@@ -15,6 +15,24 @@ const NOTICE = {
   }
 };
 
+/* ─── SERVISNÍ OBLAST – datové pole pro kartičky měst ─
+   Každý jazyk má vlastní seznam – NETRANSLUJEME česká města,
+   DE verze zobrazuje německá příhraniční města.
+──────────────────────────────────────────────── */
+const serviceAreas = {
+  cs: [
+    'Karlovy Vary', 'Cheb', 'Sokolov', 'Mariánské Lázně',
+    'Ostrov', 'Františkovy Lázně', 'Aš', 'Chodov',
+    'Kraslice', 'Nejdek', 'Loket', 'Jáchymov'
+  ],
+  de: [
+    'Hof', 'Selb', 'Marktredwitz', 'Wunsiedel',
+    'Rehau', 'Plauen', 'Zwickau', 'Chemnitz',
+    'Bayreuth', 'Weiden in der Oberpfalz',
+    'Tirschenreuth', 'Annaberg-Buchholz', 'Aue-Bad Schlema'
+  ]
+};
+
 /* ─── I18N ───────────────────────────────────── */
 // 1. localStorage má přednost, 2. jazyk prohlížeče, 3. výchozí CS
 let currentLang = localStorage.getItem('sk_lang')
@@ -65,6 +83,14 @@ function applyLang(lang) {
   }
 
   currentLang = lang;
+
+  const citiesGrid = document.getElementById('citiesGrid');
+  if (citiesGrid && serviceAreas[lang]) {
+    const pin = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg>';
+    citiesGrid.innerHTML = serviceAreas[lang]
+      .map(city => `<div class="city-card">${pin}<span>${city}</span></div>`)
+      .join('');
+  }
 }
 
 (function () {

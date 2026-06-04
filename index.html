@@ -113,10 +113,10 @@
       <!-- Přepínač jazyka / Sprachschalter -->
       <div class="lang-switcher" id="langSwitcher" role="group" aria-label="Jazyk / Sprache">
         <button class="lang-btn" data-lang="cs" aria-label="Čeština">
-          <span class="lang-flag" aria-hidden="true">🇨🇿</span>
+          <img src="images/flags/cz.svg" class="lang-flag" alt="Čeština" width="22" height="16">
         </button>
         <button class="lang-btn" data-lang="de" aria-label="Deutsch">
-          <span class="lang-flag" aria-hidden="true">🇩🇪</span>
+          <img src="images/flags/de.svg" class="lang-flag" alt="Deutsch" width="22" height="16">
         </button>
       </div>
 
@@ -447,15 +447,7 @@
         <div class="area-inner">
           <div class="area-cities">
             <h3 class="area-cities-title" data-i18n="area.cities.h">Hlavní oblasti výjezdů</h3>
-            <div class="cities-grid">
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city1">Karlovy Vary</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city2">Cheb</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city3">Sokolov</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city4">Mariánské Lázně</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city5">Ostrov</span></div>
-              <div class="city-card"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" fill="currentColor"/></svg><span data-i18n="area.city6">Františkovy Lázně</span></div>
-              <div class="city-card city-card--more"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M12 5l7 7-7 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg><span data-i18n="area.city7">a celý kraj</span></div>
-            </div>
+            <div class="cities-grid" id="citiesGrid"></div>
           </div>
           <div class="area-stats">
             <div class="area-stat-card area-stat-card--primary">

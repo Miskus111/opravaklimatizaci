@@ -222,7 +222,11 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
 }
 .lang-btn.active { background: rgba(255,255,255,.18); opacity: 1; }
 .lang-btn:hover:not(.active) { opacity: .85; }
-.lang-flag { font-size: 1.15rem; line-height: 1; }
+.lang-flag {
+  width: 22px; height: 16px;
+  object-fit: cover; display: block; border-radius: 2px;
+  box-shadow: 0 0 0 1px rgba(255,255,255,.15);
+}
 
 .header-phone {
   display: flex; align-items: center; gap: 6px;
@@ -264,7 +268,7 @@ h3 { font-size: clamp(1rem, 2vw, 1.18rem); }
   .header-cta { display: none; }
   .burger { display: flex; }
   .logo { flex: 1; }
-  .lang-flag { font-size: 1.05rem; }
+  .lang-flag { width: 20px; height: 14px; }
 }
 
 /* ═══════════════════════════════════════════════

@@ -34,8 +34,11 @@ const serviceAreas = {
 };
 
 /* ─── I18N ───────────────────────────────────── */
-// 1. localStorage má přednost (uložená volba uživatele), 2. výchozí CS
-let currentLang = localStorage.getItem('sk_lang') || 'cs';
+// Klíč sk_lang_v2 – starý sk_lang (browser-autodetekce) se záměrně ignoruje.
+// Platné hodnoty: 'cs' | 'de'. Cokoliv jiného → výchozí 'cs'.
+const _LANG_KEY = 'sk_lang_v2';
+const _saved = localStorage.getItem(_LANG_KEY);
+let currentLang = (_saved === 'cs' || _saved === 'de') ? _saved : 'cs';
 
 function applyLang(lang) {
   const T = window.TRANSLATIONS;
@@ -163,7 +166,7 @@ function applyLang(lang) {
     btn.addEventListener('click', () => {
       const lang = btn.dataset.lang;
       if (lang === currentLang) return;
-      localStorage.setItem('sk_lang', lang);
+      localStorage.setItem(_LANG_KEY, lang);
       applyLang(lang);
     });
   });

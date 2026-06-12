@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /VEDOS_DEPLOY/
+
+Sitemap: https://www.serviskostler.cz/sitemap.xml
